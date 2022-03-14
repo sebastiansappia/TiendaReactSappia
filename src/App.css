@@ -7,6 +7,53 @@
   pointer-events: none;
 }
 
+header {
+  background-color: rgb(242, 242, 242);
+  -webkit-box-shadow: 1px 5px 15px -3px rgba(0, 0, 0, 0.36);
+  box-shadow: 1px 5px 15px -3px rgba(0, 0, 0, 0.36);
+}
+
+header .brandNav {
+  float: left;
+  margin: 1em;
+}
+
+header .brandNav img {
+  display: inline;
+  max-width: 50px;
+  vertical-align:middle;
+}
+
+
+header .brandNav h1 {
+  display: inline;
+  text-transform: uppercase;
+  margin-left: 1em;
+  color: #33539e
+}
+
+header nav .menu {
+  float: right;
+  margin-right: 1em;
+}
+
+header nav ul li {
+  display: inline;
+  margin-right: 1em;
+}
+
+header nav ul li .customButton {
+  background-color: #585858;
+}
+
+header nav ul li .customButton:hover {
+  background-color: #3e3e3e;
+}
+
+.clear-both {
+  clear: both;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -32,6 +79,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
