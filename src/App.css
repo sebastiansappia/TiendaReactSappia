@@ -37,6 +37,10 @@ header nav .menu {
   margin-right: 1em;
 }
 
+header nav ul {
+  margin-right: 2em;
+}
+
 header nav ul li {
   display: inline;
   margin-right: 1em;
@@ -52,6 +56,27 @@ header nav ul li .customButton:hover {
 
 .clear-both {
   clear: both;
+}
+
+.relative {
+  position:relative;
+}
+
+.itemsCart {
+  position: absolute;
+  background: #33539e;
+  width: 16px;
+  height: 16px;
+  border-radius: 100px;
+  font-size: 11px;
+  left: 14px;
+  top: 6px;
+  color: white;
+}
+
+h1.tituloPrincipal {
+  font-size: 1.5em;
+  color: #33539e;
 }
 
 @media (prefers-reduced-motion: no-preference) {
