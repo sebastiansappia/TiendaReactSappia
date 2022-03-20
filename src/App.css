@@ -82,6 +82,8 @@ header nav ul li .customButton:hover {
 h1.tituloPrincipal {
   font-size: 1.5em;
   color: #33539e;
+  margin: 2px;
+  margin-bottom: 2px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
