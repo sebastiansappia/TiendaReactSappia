@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export default function ItemCount(props) {
-    
+
     const { stock, initial, onAdd } = props;
     const [cant, setCantidad] = React.useState(initial);
 
