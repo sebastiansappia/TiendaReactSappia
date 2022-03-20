@@ -2,13 +2,14 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import CartWidget from './CartWidget';
 
+
 function NavBar(props) {
     return (
         <header>
             <nav>
                 <div className="brandNav">
-                    <img src="img/nav-icon.png" />
-                    <h1>Sappia store</h1>
+                    <img src="img/logo-blue-black-up-hi.png" />
+                    <h1>Fashionista</h1>
                 </div>
                 <div className='menu'>
                     <ul>

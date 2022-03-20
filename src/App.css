@@ -16,20 +16,23 @@ header {
 header .brandNav {
   float: left;
   margin: 1em;
+  margin-left: 2em;
+  vertical-align: middle;
 }
 
 header .brandNav img {
   display: inline;
-  max-width: 50px;
-  vertical-align:middle;
+  max-width: 24px;
+  vertical-align: middle;
 }
 
 
 header .brandNav h1 {
   display: inline;
   text-transform: uppercase;
-  margin-left: 1em;
-  color: #33539e
+  margin-left: 0.5em;
+  color: #33539e;
+  vertical-align: middle
 }
 
 header nav .menu {
@@ -39,15 +42,17 @@ header nav .menu {
 
 header nav ul {
   margin-right: 2em;
+  vertical-align: middle
 }
 
 header nav ul li {
   display: inline;
   margin-right: 1em;
+  vertical-align: middle
 }
 
 header nav ul li .customButton {
-  background-color: #585858;
+  background-color: #33539e;
 }
 
 header nav ul li .customButton:hover {
@@ -59,7 +64,7 @@ header nav ul li .customButton:hover {
 }
 
 .relative {
-  position:relative;
+  position: relative;
 }
 
 .itemsCart {
@@ -99,6 +104,117 @@ h1.tituloPrincipal {
 .App-link {
   color: #61dafb;
 }
+
+.itemCard {
+  margin: 20px;
+  border: 1px solid #d7d7d7;
+  border-radius: 20px;
+  background: #f3f3f3;
+  overflow: hidden;
+}
+
+.itemCard .productData {
+  padding: 20px;
+  padding-top: 0px
+}
+
+.itemCard .imgContainer {
+  max-height: 295px;
+  overflow: hidden;
+}
+
+.itemCard img {
+  max-width: 100%;
+  transition: transform .2s;
+}
+
+.itemCard img:hover {
+  transform: scale(1.05);
+}
+
+.itemCard .title {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  margin-top: 0.4em;
+}
+
+.itemCard .description {
+  font-size: 13px;
+  margin: 0px;
+  padding: 0;
+}
+
+.itemCard .price {
+  font-size: 20px;
+  margin: 0;
+  text-align: left;
+}
+
+.itemCounter {}
+
+.itemCounter .button {
+  display: block;
+  cursor: pointer;
+  border: 1px solid #33539e;
+  padding: 0.5em;
+  border-radius: 6px;
+  color: #33539e;
+}
+
+.itemCounter .button:hover {
+  background: #33539e;
+  color: #fff;
+}
+
+.itemCounter .counter {
+  margin: 1em 0;
+  border: 1px solid lightgrey;
+  background: white;
+  padding: 15px;
+  padding-bottom: 18px;
+  border-radius: 10px;
+}
+
+.itemCounter .counter .substract {
+  display: inline-block;
+  margin: 0;
+  float: left;
+  cursor: pointer;
+  font-weight: bold;
+  height: 25px;
+  width: 25px;
+  color: #33539e;
+  border: 1px solid #33539e;
+  border-radius: 5px;
+}
+
+.itemCounter .counter .add {
+  display: inline-block;
+  margin: 0;
+  float: right;
+  cursor: pointer;
+  font-weight: bold;
+  height: 25px;
+  width: 25px;
+  color: #33539e;
+  border: 1px solid #33539e;
+  border-radius: 5px;
+}
+
+.itemCounter .counter .add:hover, .itemCounter .counter .substract:hover {
+  background: #33539e;
+  color: white;
+}
+
+.itemCounter .counter .cant {
+  display: inline-block;
+  margin: 0;
+
+}
+
 
 @keyframes App-logo-spin {
   from {
