@@ -9,6 +9,7 @@ export default function CardProduct(props) {
                 <p className="description">{description}</p>
                 <p className="price">${price}</p>
                 <ItemCount stock={stock} initial={initial} onAdd={onAdd} />
+                <p className="stockDisponible">Stock disponible: {stock}</p>
             </div>
         </div>
     )

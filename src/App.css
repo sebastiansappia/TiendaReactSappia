@@ -121,7 +121,7 @@ h1.tituloPrincipal {
 }
 
 .itemCard .imgContainer {
-  max-height: 295px;
+  max-height: 245px;
   overflow: hidden;
 }
 
@@ -153,6 +153,12 @@ h1.tituloPrincipal {
   font-size: 20px;
   margin: 0;
   text-align: left;
+}
+
+.itemCard .stockDisponible {
+  font-size:11px;
+  margin: 0;
+  padding: 0px;
 }
 
 .itemCounter {}
