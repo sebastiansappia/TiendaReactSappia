@@ -86,6 +86,19 @@ h1.tituloPrincipal {
   margin-bottom: 2px;
 }
 
+.productData .detalle {
+  background: #e9e9e9;
+  padding: 6px;
+  border: 1px solid #d7d7d7;
+  border-radius: 40px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.productData .detalle:hover {
+  background: #dbdbdb;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

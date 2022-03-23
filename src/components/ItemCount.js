@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function ItemCount(props) {
 
-    const { stock, initial, onAdd } = props;
+    const { stock, initial} = props;
     const [cant, setCantidad] = React.useState(initial);
 
     const sumar = () => {
@@ -17,6 +17,16 @@ export default function ItemCount(props) {
         }
     };
 
+    const onAdd = (cant) => {
+        console.log(`Agregaste ${cant} productos al carrito.`);
+    };
+
+
+    /*
+        useEffect(() => {
+            console.log('Test');
+        }, [onAdd]);*/
+
     return (
         <div className="itemCounter">
             <div className="counter">
@@ -24,7 +34,7 @@ export default function ItemCount(props) {
                 <p className="cant">{cant}</p>
                 <p className="add" onClick={sumar}>+</p>
             </div>
-            <p className="button">Agregar al carrito</p>
+            <p className="button" onClick={onAdd(cant)}>Agregar al carrito</p>
         </div>
     )
 }
