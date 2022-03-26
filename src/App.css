@@ -146,7 +146,7 @@ h1.tituloPrincipal {
   width: 48%;
   display: inline-block;
   overflow: hidden;
-  max-height: 500px;
+  max-height: 540px;
   border-radius: 20px;
 }
 
@@ -169,6 +169,10 @@ h1.tituloPrincipal {
 }
 
 .itemDetail .productData .title {}
+
+.itemDetail .itemCounter .counter, .itemDetail .itemCounter .button{
+  text-align: center !important;
+}
 
 .itemDetail .productData {
   text-align: left;
@@ -254,6 +258,7 @@ h1.tituloPrincipal {
   color: #33539e;
   border: 1px solid #33539e;
   border-radius: 5px;
+  text-align: center;
 }
 
 .itemCounter .counter .add {
@@ -267,6 +272,7 @@ h1.tituloPrincipal {
   color: #33539e;
   border: 1px solid #33539e;
   border-radius: 5px;
+  text-align: center;
 }
 
 .itemCounter .counter .add:hover, .itemCounter .counter .substract:hover {

@@ -21,12 +21,6 @@ export default function ItemCount(props) {
         console.log(`Agregaste ${cant} productos al carrito.`);
     };
 
-
-    /*
-        useEffect(() => {
-            console.log('Test');
-        }, [onAdd]);*/
-
     return (
         <div className="itemCounter">
             <div className="counter">
