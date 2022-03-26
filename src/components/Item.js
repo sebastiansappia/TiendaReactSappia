@@ -1,5 +1,15 @@
-export default function Item() {
+import React, { useState, useEffect } from 'react';
+
+export default function Item(props) {
+    const { id } = props
+    const [selectId, setId] = React.useState(id)
+
+    function llamarId() {
+        console.log(selectId)
+        alert('Seleccionaste el ' + selectId)
+    }
+
     return (
-        <p class="detalle">Ver detalle del producto</p>
+        <p className="detalle" id={id} onClick={llamarId}>Ver detalle del producto</p>
     )
 }

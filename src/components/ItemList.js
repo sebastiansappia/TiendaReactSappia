@@ -11,7 +11,7 @@ export default function ItemList({ data }, key) {
                 <p className="description">{description}</p>
                 <p className="price">${price}</p>
                 <ItemCount stock={stock} initial={initial}/>
-                <Item />
+                <Item id={id}/>
                 <p className="stockDisponible">Stock disponible: {stock}</p>
             </div>
         </div>

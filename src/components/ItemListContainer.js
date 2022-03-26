@@ -1,5 +1,6 @@
 import Grid from '@mui/material/Grid';
 import ItemList from './ItemList';
+import ItemDetailContainer from './ItemDetailContainer';
 import React, { useState, useEffect } from 'react';
 
 

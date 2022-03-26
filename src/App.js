@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 function App() {
     useEffect(() => {
@@ -16,6 +17,7 @@ function App() {
         <div className="App" >
             <NavBar itemsCart={0} />
             <ItemListContainer title="&iexcl;Mir&aacute; nuestros productos destacados!"/>
+            <ItemDetailContainer />
         </div>
     );
 }

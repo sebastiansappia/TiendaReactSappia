@@ -120,7 +120,7 @@ h1.tituloPrincipal {
   color: #61dafb;
 }
 
-.itemCard {
+.itemCard, .itemDetail {
   margin: 20px;
   border: 1px solid #d7d7d7;
   border-radius: 20px;
@@ -136,6 +136,50 @@ h1.tituloPrincipal {
 .itemCard .imgContainer {
   max-height: 245px;
   overflow: hidden;
+}
+
+.itemDetail {
+  padding: 2%;
+}
+
+.itemDetail .imgContainer {
+  width: 48%;
+  display: inline-block;
+  overflow: hidden;
+  max-height: 500px;
+  border-radius: 20px;
+}
+
+.itemDetail .imgContainer img {
+  margin-top: -115px;
+
+}
+
+
+.itemDetail .productData {
+  width: 48%;
+  display: inline-block;
+  margin-left: 3%;
+  align-self: center !important;
+  -ms-flex-item-align: center !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+  vertical-align: top;
+  /* here */
+}
+
+.itemDetail .productData .title {}
+
+.itemDetail .productData {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.grey {
+  color: grey;
 }
 
 .itemCard img {
@@ -169,14 +213,14 @@ h1.tituloPrincipal {
 }
 
 .itemCard .stockDisponible {
-  font-size:11px;
+  font-size: 11px;
   margin: 0;
   padding: 0px;
 }
 
 .itemCounter {}
 
-.itemCounter .button {
+.itemCounter .button, .itemDetail .button {
   display: block;
   cursor: pointer;
   border: 1px solid #33539e;
@@ -185,7 +229,7 @@ h1.tituloPrincipal {
   color: #33539e;
 }
 
-.itemCounter .button:hover {
+.itemCounter .button:hover, .itemDetail .button:hover {
   background: #33539e;
   color: #fff;
 }
