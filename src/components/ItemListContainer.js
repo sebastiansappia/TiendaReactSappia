@@ -49,26 +49,6 @@ export default function ItemListContainer(props) {
         initial: 1
     }]
 
-    /*
-    const [products, setProducts] = useState([])
-
-    const getProducts = () => {
-        return new Promise((resolve, reject) => {
-            return resolve(mockProductos)
-        })
-    }
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            getProducts().then((productos) => {
-                setProducts(productos)
-            }).finally(() => {
-                console.log("Cargaron los items")
-            })
-        }, 120);
-        return () => clearTimeout(timer);
-    }, [])*/
-
     return (
         <div>
             <Grid container spacing={2}>
@@ -80,16 +60,3 @@ export default function ItemListContainer(props) {
         </div>
     )
 }
-
-/*
-{products.map((product) => {
-                const { id } = product
-                return (
-                    <Grid item xs={3} key={id}>
-                        <ItemList data={products}/>
-                    </Grid>
-                )
-            })}
-
-
-*/
