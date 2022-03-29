@@ -5,8 +5,6 @@ import { faCreditCard } from '@fortawesome/free-solid-svg-icons'
 export default function ItemDetail({ data }, key) {
     const { id, img, alt, title, description, price, stock, talles, initial } = data;
 
-
-
     return (
         <div className="itemDetail" id={id}>
             <div className="imgContainer"><img src={img} alt={alt} /></div>

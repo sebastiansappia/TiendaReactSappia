@@ -49,6 +49,7 @@ export default function ItemListContainer(props) {
         initial: 1
     }]
 
+    /*
     const [products, setProducts] = useState([])
 
     const getProducts = () => {
@@ -66,21 +67,29 @@ export default function ItemListContainer(props) {
             })
         }, 120);
         return () => clearTimeout(timer);
-    }, [])
+    }, [])*/
 
     return (
-        <Grid container spacing={2}>
-            <Grid item xs={12}>
-                <h1 className="tituloPrincipal">{title}</h1>
+        <div>
+            <Grid container spacing={2}>
+                <Grid item xs={12}>
+                    <h1 className="tituloPrincipal">{title}</h1>
+                </Grid>
             </Grid>
-            {products.map((product) => {
+            <ItemList mockProductos={mockProductos} />
+        </div>
+    )
+}
+
+/*
+{products.map((product) => {
                 const { id } = product
                 return (
                     <Grid item xs={3} key={id}>
-                        <ItemList data={product}/>
+                        <ItemList data={products}/>
                     </Grid>
                 )
             })}
-        </Grid>
-    )
-}
+
+
+*/
