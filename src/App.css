@@ -2,13 +2,18 @@
   text-align: center;
 }
 
+.App a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
 header {
-  background-color: rgb(242, 242, 242);
+  background-color: #000;
   -webkit-box-shadow: 1px 5px 15px -3px rgba(0, 0, 0, 0.36);
   box-shadow: 1px 5px 15px -3px rgba(0, 0, 0, 0.36);
 }
@@ -22,7 +27,7 @@ header .brandNav {
 
 header .brandNav img {
   display: inline;
-  max-width: 24px;
+  max-width: 125px;
   vertical-align: middle;
 }
 
@@ -52,11 +57,16 @@ header nav ul li {
 }
 
 header nav ul li .customButton {
-  background-color: #33539e;
+  color: white;
+  background: none;
 }
 
 header nav ul li .customButton:hover {
-  background-color: #3e3e3e;
+  background: #3e3e3e;
+}
+
+.MuiSvgIcon-root {
+  color: white;
 }
 
 .clear-both {
@@ -69,19 +79,19 @@ header nav ul li .customButton:hover {
 
 .itemsCart {
   position: absolute;
-  background: #33539e;
+  background: white;
   width: 16px;
   height: 16px;
   border-radius: 100px;
   font-size: 11px;
   left: 14px;
   top: 6px;
-  color: white;
+  color: #000;
 }
 
 h1.tituloPrincipal {
   font-size: 1.5em;
-  color: #33539e;
+  color: #545454;
   margin: 2px;
   margin-bottom: 2px;
 }
@@ -170,7 +180,7 @@ h1.tituloPrincipal {
 
 .itemDetail .productData .title {}
 
-.itemDetail .itemCounter .counter, .itemDetail .itemCounter .button{
+.itemDetail .itemCounter .counter, .itemDetail .itemCounter .button {
   text-align: center !important;
 }
 
@@ -189,6 +199,7 @@ h1.tituloPrincipal {
 .itemCard img {
   max-width: 100%;
   transition: transform .2s;
+  margin-top: -4em;
 }
 
 .itemCard img:hover {
@@ -227,14 +238,15 @@ h1.tituloPrincipal {
 .itemCounter .button, .itemDetail .button {
   display: block;
   cursor: pointer;
-  border: 1px solid #33539e;
+  border: 1px solid #545454;
   padding: 0.5em;
   border-radius: 6px;
-  color: #33539e;
+  color: #545454;
 }
 
 .itemCounter .button:hover, .itemDetail .button:hover {
-  background: #33539e;
+  background: #e900b7;
+  border: 1px solid #e900b7;
   color: #fff;
 }
 
@@ -255,8 +267,8 @@ h1.tituloPrincipal {
   font-weight: bold;
   height: 25px;
   width: 25px;
-  color: #33539e;
-  border: 1px solid #33539e;
+  color: #e900b7;
+  border: 1px solid #e900b7;
   border-radius: 5px;
   text-align: center;
 }
@@ -269,14 +281,14 @@ h1.tituloPrincipal {
   font-weight: bold;
   height: 25px;
   width: 25px;
-  color: #33539e;
-  border: 1px solid #33539e;
+  color: #e900b7;
+  border: 1px solid #e900b7;
   border-radius: 5px;
   text-align: center;
 }
 
 .itemCounter .counter .add:hover, .itemCounter .counter .substract:hover {
-  background: #33539e;
+  background: #e900b7;
   color: white;
 }
 
@@ -284,6 +296,14 @@ h1.tituloPrincipal {
   display: inline-block;
   margin: 0;
 
+}
+
+ul.detalleComoComprar {
+  text-align: left;
+}
+
+.marginAuto {
+  margin: 0 auto;
 }
 
 

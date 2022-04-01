@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom"
+import { useParams } from "react-router";
 
 export default function Item(props) {
     const { id } = props
-    const [selectId, setId] = React.useState(id)
-
-    function llamarId() {
-        console.log(selectId)
-        alert('Seleccionaste el ' + selectId)
-    }
+    //const [selectId, setId] = React.useState(id)
 
     return (
-        <p className="detalle" id={id} onClick={llamarId}>Ver detalle del producto</p>
+        <Link to={`/item/${id}/`}><p className="detalle" id={id}>Ver detalle del producto</p></Link>
     )
 }
