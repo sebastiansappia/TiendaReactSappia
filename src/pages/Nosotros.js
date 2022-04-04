@@ -1,7 +1,7 @@
 import Grid from '@mui/material/Grid';
 import React, { useState, useEffect } from 'react';
 
-const NotFoundPage = () => {
+const Nosotros = () => {
     return (
         <div>
             <Grid container spacing={2}>
@@ -28,4 +28,4 @@ const NotFoundPage = () => {
     )
 }
 
-export default NotFoundPage
+export default Nosotros

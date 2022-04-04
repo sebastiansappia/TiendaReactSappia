@@ -8,8 +8,6 @@ export default function ItemList(props) {
 
     const { categoryId } = useParams()
 
-    console.log(categoryId);
-
     const { mockProductos } = props;
 
     const [products, setProducts] = useState([])
@@ -20,18 +18,14 @@ export default function ItemList(props) {
         })
     }
 
-    /*
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setProducts([])
-            getProducts().then( (productos) => {
-                categoryId ? filterProductByCategory(productos, categoryId) : setProducts(productos)
-            }).finally(() => {
-                console.log("Cargaron los items")
-            })
-        }, 120);
-        return () => clearTimeout(timer);
-    }, [categoryId])*/
+    const [count, setCount] = useState(0);
+    const [hideId, setHideId] = useState([]);
+    const onAdd = (e, cant, id) => {
+        e.stopPropagation();
+        setCount(count + cant);
+        setHideId([...hideId, id]);
+        console.log('Se agregaron: ' + cant + ' items del articulo ID: ' + id);
+    };
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -56,7 +50,6 @@ export default function ItemList(props) {
     return (
         <Grid container spacing={2}>
             <Grid item xs={12}>
-                {console.log("products: ", products)}
                 {
                     products.map((product) => {
                         const { id, img, alt, title, description, price, stock, initial } = product
@@ -66,7 +59,7 @@ export default function ItemList(props) {
                                     <div className="imgContainer"><Link to={`/item/${id}/`}><img src={img} alt={alt} /></Link></div>
                                     <div className="productData"><p className="title">{title}</p>
                                         <p className="price">${price}</p>
-                                        <ItemCount stock={stock} initial={initial} />
+                                        <ItemCount id={id} stock={stock} initial={initial} action={onAdd} hideId={hideId} />
                                         <Item id={id} />
                                         <p className="stockDisponible">Stock disponible: {stock}</p>
                                     </div>

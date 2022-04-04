@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage'
 import Item from './pages/Item'
 import NotFoundPage from './pages/NotFoundPage'
 import Nosotros from './pages/Nosotros'
+import Cart from './pages/Cart'
 
 function App() {
     useEffect(() => {
@@ -25,7 +26,8 @@ function App() {
                     <Route path="/" element={<HomePage />} />
                     <Route path="/category/:categoryId/" element={<HomePage />} />
                     <Route path="/item/:id/" element={<Item />} />
-                    <Route path="/Nosotros" element={<Nosotros />} />
+                    <Route path="/nosotros" element={<Nosotros />} />
+                    <Route path="/cart" element={<Cart />} />
                     <Route path="*" element={<NotFoundPage />}/>
                 </Routes>
             </BrowserRouter>

@@ -1,9 +1,20 @@
 import ItemCount from './ItemCount';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCreditCard } from '@fortawesome/free-solid-svg-icons'
+import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom"
 
 export default function ItemDetail({ data }, key) {
     const { id, img, alt, title, description, price, stock, talles, initial } = data;
+
+    const [count, setCount] = useState(0);
+    const [hideId, setHideId] = useState([]);
+    const onAdd = (e, cant, id) => {
+        e.stopPropagation();
+        setCount(count + cant);
+        setHideId([...hideId, id]);
+        console.log('Se agregaron: ' + cant + ' items del articulo ID: ' + id);
+    };
 
     return (
         <div className="itemDetail" id={id}>
@@ -13,8 +24,7 @@ export default function ItemDetail({ data }, key) {
                 <p className="cuotas"><FontAwesomeIcon icon={faCreditCard} /> <b>12 cuotas sin inter&eacute;s de ${(price / 12).toFixed(2)}</b></p>
                 <p className="description">{description}</p>
                 <p className="talles">Talles disponibles: {talles}</p>
-                <ItemCount stock={stock} initial={initial}/>
-                <p className="button center">Comprar</p>
+                <ItemCount id={id} stock={stock} initial={initial} action={onAdd} hideId={hideId} />
                 <p className="stockDisponible">Stock disponible: {stock}</p>
             </div>
         </div>
