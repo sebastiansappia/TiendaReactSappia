@@ -3,6 +3,7 @@ import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import React, { useState, useEffect, useContext } from 'react';
 import CartContext from '../context/cartContext';
 import CartProduct from '../components/CartProduct';
+import { Link } from "react-router-dom"
 
 
 const Cart = () => {
@@ -36,7 +37,16 @@ const Cart = () => {
     }
     else {
         return (
-            <div>No hay items</div>
+            <div>
+                <Grid container spacing={2}>
+                    <Grid item xs={12} className="marginAuto">
+                        <div>
+                            <h1 className="tituloPrincipal"><ShoppingCartOutlinedIcon /> No ten&eacute;s items en tu carrito</h1>
+                            <Link to={"/"}><p className="button w-25 d-inline-block">Ir al comprar</p></Link>
+                        </div>
+                    </Grid>
+                </Grid>
+            </div>
         )
     }
 

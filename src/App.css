@@ -239,7 +239,7 @@ h1.tituloPrincipal svg {
 
 .itemCounter {}
 
-.itemCounter .button, .itemDetail .button {
+.itemCounter .button, .itemDetail .button, .button {
   display: block;
   cursor: pointer;
   border: 1px solid #545454;
@@ -248,7 +248,7 @@ h1.tituloPrincipal svg {
   color: #545454;
 }
 
-.itemCounter .button:hover, .itemDetail .button:hover {
+.itemCounter .button:hover, .itemDetail .button:hover, .button:hover {
   background: #e900b7;
   border: 1px solid #e900b7;
   color: #fff;
@@ -372,6 +372,10 @@ ul.detalleComoComprar {
 .black, .black svg {
   color: #000;
   cursor: pointer;
+}
+
+.d-inline-block {
+  display: inline-block;
 }
 
 
