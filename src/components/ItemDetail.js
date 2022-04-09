@@ -13,7 +13,7 @@ export default function ItemDetail({ data }, key) {
         e.stopPropagation();
         setCount(count + cant);
         setHideId([...hideId, id]);
-        console.log('Se agregaron: ' + cant + ' items del articulo ID: ' + id);
+        //console.log('Se agregaron: ' + cant + ' items del articulo ID: ' + id);
     };
 
     return (
@@ -24,7 +24,7 @@ export default function ItemDetail({ data }, key) {
                 <p className="cuotas"><FontAwesomeIcon icon={faCreditCard} /> <b>12 cuotas sin inter&eacute;s de ${(price / 12).toFixed(2)}</b></p>
                 <p className="description">{description}</p>
                 <p className="talles">Talles disponibles: {talles}</p>
-                <ItemCount id={id} stock={stock} initial={initial} action={onAdd} hideId={hideId} />
+                <ItemCount id={id} stock={stock} initial={initial} action={onAdd} hideId={hideId} product={data}/>
                 <p className="stockDisponible">Stock disponible: {stock}</p>
             </div>
         </div>

@@ -59,7 +59,7 @@ export default function ItemList(props) {
                                     <div className="imgContainer"><Link to={`/item/${id}/`}><img src={img} alt={alt} /></Link></div>
                                     <div className="productData"><p className="title">{title}</p>
                                         <p className="price">${price}</p>
-                                        <ItemCount id={id} stock={stock} initial={initial} action={onAdd} hideId={hideId} />
+                                        <ItemCount id={id} stock={stock} initial={initial} action={onAdd} hideId={hideId} product={product}/>
                                         <Item id={id} />
                                         <p className="stockDisponible">Stock disponible: {stock}</p>
                                     </div>

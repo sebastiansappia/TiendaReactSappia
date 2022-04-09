@@ -22,7 +22,6 @@ function NavBar(props) {
                         <CartWidget items={props.itemsCart} />
                     </ul>
                 </div>
-                
             </nav>
             <div className='clear-both'></div>
         </header>
