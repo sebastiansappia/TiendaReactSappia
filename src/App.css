@@ -113,6 +113,10 @@ h1.tituloPrincipal svg {
   background: #dbdbdb;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -303,8 +307,9 @@ h1.tituloPrincipal svg {
   text-align: center;
 }
 
-.itemCounter .counter .add.remove svg {
+.itemCounter .counter .add.remove.trash, .itemCounter .counter .add.remove.trash svg {
   color: #e900b7;
+  border: none !important
 }
 
 .itemCounter .counter .add:hover, .itemCounter .counter .substract:hover, .itemCounter .counter .add.remove:hover svg,
@@ -359,8 +364,18 @@ ul.detalleComoComprar {
   display: inline-block;
 }
 
+.col-4 {
+  width: 33.333333333%;
+  display: inline-block;
+  text-align: left;
+}
+
 .w-100 {
   width: 100%;
+}
+
+.w-80 {
+  width: 80%;
 }
 
 .w-25 {
@@ -376,6 +391,35 @@ ul.detalleComoComprar {
 
 .d-inline-block {
   display: inline-block;
+}
+
+.cartModalContainer {
+  width: 310px;
+  position: absolute;
+  top: 73px;
+  right: 0px;
+  background: white;
+  padding: 20px;
+  box-shadow: 1px 5px 15px -3px rgb(0 0 0 / 36%);
+}
+
+.z-index-top {
+  z-index: 999999999999;
+}
+
+.cartItemContainerModal {
+  padding-top: 0px
+}
+
+.cartItemContainerModal p {
+  padding: 3px;
+  margin: 0px;
+  font-size: 10px;
+}
+
+.cartItemContainerModal .imgContainer {
+  height: 101px;
+  overflow: hidden;
 }
 
 

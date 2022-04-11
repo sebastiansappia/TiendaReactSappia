@@ -8,9 +8,11 @@ import { Link } from "react-router-dom"
 
 const Cart = () => {
 
-    const { cartItem, addItem, showId, removeItem, countCart } = useContext(CartContext);
+    const { cartItem, addItem, showId, removeItem, countCart, setShowModal } = useContext(CartContext);
 
     const totalCart = cartItem.map((product) => Number(product.price * product.cant)).reduce((a, b) => a + b, 0);
+
+    setShowModal(false);
 
     if (countCart > 0) {
         return (

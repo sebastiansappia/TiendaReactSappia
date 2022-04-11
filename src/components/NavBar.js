@@ -1,7 +1,10 @@
 import React from 'react';
 import Button from '@mui/material/Button';
-import CartWidget from './CartWidget';
 import { Link } from "react-router-dom"
+
+//Component
+import CartWidget from './CartWidget';
+import CartModal from './CartModal';
 
 
 function NavBar(props) {
@@ -20,6 +23,7 @@ function NavBar(props) {
                         <li><Link to={`/nosotros/`}><Button variant="contained" className='customButton'>&iquest;C&oacute;mo comprar?</Button></Link></li>
                         <li><Button variant="contained" className='customButton'>Contacto</Button></li>
                         <CartWidget items={props.itemsCart} />
+                        <CartModal />
                     </ul>
                 </div>
             </nav>

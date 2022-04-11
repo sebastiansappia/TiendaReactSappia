@@ -6,6 +6,7 @@ const CartProvider = ({ children }) => {
     const [cartItem, addCartItem] = useState([])
     const [countCart, setCountCartItem] = useState(0)
     const [showId, setShowId] = useState([])
+    const [showModal, setShowModal] = useState(false);
 
     const addItem = (data) => {
         if (cartItem.find(e => e.id == data.id)) {
@@ -31,6 +32,8 @@ const CartProvider = ({ children }) => {
         cartItem,
         countCart,
         showId,
+        showModal,
+        setShowModal,
         removeItem,
         addItem
     }

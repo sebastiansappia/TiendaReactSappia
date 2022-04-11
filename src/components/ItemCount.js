@@ -43,7 +43,7 @@ export default function ItemCount(props) {
                 <div className="counter">
                     <p className="substractEmpty">-</p>
                     <p className="cant">{cant}</p>
-                    <p className="add remove" onClick={removeToCart}><DeleteForeverOutlinedIcon /></p>
+                    <p className="add remove trash" onClick={removeToCart}><DeleteForeverOutlinedIcon /></p>
 
                 </div>
                 <Link to={"/cart"}><p className="button">Finalizar compra</p></Link>
