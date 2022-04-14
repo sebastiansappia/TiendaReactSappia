@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap');
+
+body, html {
+    font-family: 'Poppins', sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
 .App {
   text-align: center;
 }
@@ -63,6 +71,7 @@ header nav ul li .customButton {
 
 header nav ul li .customButton:hover {
   background: #3e3e3e;
+  border-radius: 35px;
 }
 
 .MuiSvgIcon-root {
@@ -102,10 +111,10 @@ h1.tituloPrincipal svg {
 
 .productData .detalle {
   background: #e9e9e9;
-  padding: 6px;
-  border: 1px solid #d7d7d7;
-  border-radius: 40px;
-  font-size: 13px;
+  padding: 8px;
+  /* border: 1px solid #d7d7d7; */
+  border-radius: 7px;
+  font-size: 11px;
   cursor: pointer;
 }
 
@@ -115,6 +124,10 @@ h1.tituloPrincipal svg {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.circularProgress {
+  margin-top: 170px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -140,8 +153,8 @@ h1.tituloPrincipal svg {
 
 .itemCard, .itemDetail {
   margin: 20px;
-  border: 1px solid #d7d7d7;
-  border-radius: 20px;
+  border: 1px solid #efefef;
+  border-radius: 5px;
   background: #f3f3f3;
   overflow: hidden;
 }
@@ -165,7 +178,7 @@ h1.tituloPrincipal svg {
   display: inline-block;
   overflow: hidden;
   max-height: 540px;
-  border-radius: 20px;
+  border-radius: 5px;
 }
 
 .itemDetail .imgContainer img {

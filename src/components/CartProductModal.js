@@ -3,12 +3,14 @@ import React, { useState, useEffect, useContext } from 'react';
 import DeleteForeverOutlinedIcon from '@material-ui/icons/DeleteForeverOutlined';
 import { Link } from "react-router-dom"
 import CartContext from '../context/cartContext';
+import CircularProgress from '@mui/material/CircularProgress';
 
 export default function CartProductModal(props) {
 
     const [products, setProducts] = useState([])
 
     const { cartItem, addItem, showId, removeItem, countCart } = useContext(CartContext);
+    const [loading, setLoading] = useState(true);
 
     const getProducts = () => {
         return new Promise((resolve, reject) => {
@@ -18,13 +20,15 @@ export default function CartProductModal(props) {
 
     useEffect(() => {
         const timer = setTimeout(() => {
+            setLoading(true);
             setProducts([])
             getProducts().then((products) => {
+                setLoading(false);
                 setProducts(products)
             }).finally(() => {
                 console.log("Cargaron los items")
             })
-        }, 120);
+        }, 200);
         return () => clearTimeout(timer);
     }, [cartItem])
 
@@ -33,7 +37,7 @@ export default function CartProductModal(props) {
     return (
         <Grid container spacing={2}>
             <Grid item xs={12}>
-                {
+                {loading ? <CircularProgress color="inherit" /> :
                     products.map((product) => {
                         const { id, img, alt, title, price, cant } = product;
                         const total = price * cant;

@@ -17,7 +17,6 @@ export default function CartModal(props) {
 
     console.log(showModal);
 
-
     if (countCart > 0 && showModal === true) {
         return (
             <div className="cartModalContainer z-index-top">

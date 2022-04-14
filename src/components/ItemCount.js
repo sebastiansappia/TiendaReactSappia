@@ -6,8 +6,11 @@ import DeleteForeverOutlinedIcon from '@material-ui/icons/DeleteForeverOutlined'
 export default function ItemCount(props) {
 
     const { stock, initial, id, action, hideId, product } = props;
+
     //Use state
     const [cant, setCantidad] = React.useState(initial);
+
+    console.log(initial);
 
     //Use context
     const { cartItem, addItem, showId, removeItem } = useContext(CartContext);
@@ -37,14 +40,17 @@ export default function ItemCount(props) {
         removeItem(id);
     }
 
+    console.log(cartItem);
+
+
     if (showId.includes(id)) {
+        const result = cartItem.find((Item) => Item.id == id);
         return (
             <div className="itemCounter">
                 <div className="counter">
                     <p className="substractEmpty">-</p>
-                    <p className="cant">{cant}</p>
+                    <p className="cant">{result.cant}</p>
                     <p className="add remove trash" onClick={removeToCart}><DeleteForeverOutlinedIcon /></p>
-
                 </div>
                 <Link to={"/cart"}><p className="button">Finalizar compra</p></Link>
                 {/*<p className="button" onClick={removeToCart}>Eliminar del carrito</p>

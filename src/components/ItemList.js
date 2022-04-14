@@ -3,6 +3,10 @@ import ItemCount from './ItemCount';
 import Item from './Item';
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import CircularProgress from '@mui/material/CircularProgress';
+//Firebase
+import db from '../firebase'
+import { collection, getDocs, query, where, orderBy } from 'firebase/firestore'
 
 export default function ItemList(props) {
 
@@ -11,11 +15,22 @@ export default function ItemList(props) {
     const { mockProductos } = props;
 
     const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(true);
 
-    const getProducts = () => {
+    const getProducts = async () => {
+        const itemsCollection = query(collection(db, 'items'), orderBy('categoryId', 'asc'));
+        const productsSnapshot = await getDocs(itemsCollection);
+        const productList = productsSnapshot.docs.map((doc) => {
+            let product = doc.data();
+            product.id = doc.id;
+            return product;
+        }
+        )
+        return productList;
+        /*
         return new Promise((resolve, reject) => {
             return resolve(mockProductos)
-        })
+        })*/
     }
 
     const [count, setCount] = useState(0);
@@ -28,9 +43,11 @@ export default function ItemList(props) {
     };
 
     useEffect(() => {
+        setLoading(true);
         const timer = setTimeout(() => {
             setProducts([])
             getProducts().then((products) => {
+                setLoading(false);
                 categoryId ? filterProductByCategory(products, categoryId) : setProducts(products)
             }).finally(() => {
                 console.log("Cargaron los items")
@@ -50,7 +67,7 @@ export default function ItemList(props) {
     return (
         <Grid container spacing={2}>
             <Grid item xs={12}>
-                {
+                {loading ? <div className="circularProgress"><CircularProgress color="inherit"/></div> :
                     products.map((product) => {
                         const { id, img, alt, title, description, price, stock, initial } = product
                         return (
@@ -59,7 +76,7 @@ export default function ItemList(props) {
                                     <div className="imgContainer"><Link to={`/item/${id}/`}><img src={img} alt={alt} /></Link></div>
                                     <div className="productData"><p className="title">{title}</p>
                                         <p className="price">${price}</p>
-                                        <ItemCount id={id} stock={stock} initial={initial} action={onAdd} hideId={hideId} product={product}/>
+                                        <ItemCount id={id} stock={stock} initial={initial} action={onAdd} hideId={hideId} product={product} />
                                         <Item id={id} />
                                         <p className="stockDisponible">Stock disponible: {stock}</p>
                                     </div>
