@@ -126,6 +126,12 @@ h1.tituloPrincipal svg {
   cursor: pointer;
 }
 
+.nosotros {
+  margin: 20px auto;
+  display: inline-block;
+  width: 55%;
+}
+
 .circularProgress {
   margin-top: 170px;
 }
