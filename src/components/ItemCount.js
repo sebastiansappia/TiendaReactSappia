@@ -40,8 +40,6 @@ export default function ItemCount(props) {
         removeItem(id);
     }
 
-    console.log(cartItem);
-
 
     if (showId.includes(id)) {
         const result = cartItem.find((Item) => Item.id == id);

@@ -39,7 +39,7 @@ export default function ItemList(props) {
         e.stopPropagation();
         setCount(count + cant);
         setHideId([...hideId, id]);
-        console.log('Se agregaron: ' + cant + ' items del articulo ID: ' + id);
+        /*console.log('Se agregaron: ' + cant + ' items del articulo ID: ' + id);*/
     };
 
     useEffect(() => {
@@ -50,7 +50,7 @@ export default function ItemList(props) {
                 setLoading(false);
                 categoryId ? filterProductByCategory(products, categoryId) : setProducts(products)
             }).finally(() => {
-                console.log("Cargaron los items")
+                /*console.log("Cargaron los items")*/
             })
         }, 120);
         return () => clearTimeout(timer);

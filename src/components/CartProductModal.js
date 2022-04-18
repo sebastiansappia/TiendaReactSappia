@@ -26,13 +26,12 @@ export default function CartProductModal(props) {
                 setLoading(false);
                 setProducts(products)
             }).finally(() => {
-                console.log("Cargaron los items")
+                /*console.log("Cargaron los items")*/
             })
         }, 200);
         return () => clearTimeout(timer);
     }, [cartItem])
 
-    console.log(cartItem)
 
     return (
         <Grid container spacing={2}>

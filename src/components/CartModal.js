@@ -15,7 +15,6 @@ export default function CartModal(props) {
     //Use context
     const { cartItem, addItem, showId, removeItem, countCart, showModal } = useContext(CartContext);
 
-    console.log(showModal);
 
     if (countCart > 0 && showModal === true) {
         return (

@@ -11,6 +11,7 @@ import Item from './pages/Item'
 import NotFoundPage from './pages/NotFoundPage'
 import Nosotros from './pages/Nosotros'
 import Cart from './pages/Cart'
+import Checkout from './pages/Checkout'
 //Context
 import { CartProvider } from './context/cartContext';
 
@@ -32,6 +33,7 @@ function App() {
                         <Route path="/item/:id/" element={<Item />} />
                         <Route path="/nosotros" element={<Nosotros />} />
                         <Route path="/cart" element={<Cart />} />
+                        <Route path="/checkout" element={<Checkout />} />
                         <Route path="*" element={<NotFoundPage />} />
                     </Routes>
                 </BrowserRouter>

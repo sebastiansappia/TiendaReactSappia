@@ -24,7 +24,7 @@ export default function ItemDetailContainer(props) {
         if (docSnap.exists()) {
             let product = docSnap.data();
             product.id = docSnap.id;
-            console.log(product);
+            /*console.log(product);*/
             setItem(product);
             setLoading(false);
         } else {

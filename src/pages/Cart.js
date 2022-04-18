@@ -8,9 +8,9 @@ import { Link } from "react-router-dom"
 
 const Cart = () => {
 
-    const { cartItem, addItem, showId, removeItem, countCart, setShowModal } = useContext(CartContext);
+    const { cartItem, addItem, showId, removeItem, countCart, setShowModal, totalPrice } = useContext(CartContext);
 
-    const totalCart = cartItem.map((product) => Number(product.price * product.cant)).reduce((a, b) => a + b, 0);
+    //const totalCart = cartItem.map((product) => Number(product.price * product.cant)).reduce((a, b) => a + b, 0);
 
     setShowModal(false);
 
@@ -31,7 +31,15 @@ const Cart = () => {
                 </Grid>
                 <Grid container spacing={2}>
                     <Grid item xs={12}>
-                        <h3>Total: ${totalCart}</h3>
+                        <div>
+                            <div className="floatLeft">
+                                <Link to={"/"}><p>Seguir comprando</p></Link>
+                            </div>
+                            <div className="floatRight">
+                                <h3>Total   ${totalPrice}</h3>
+                                <Link to={"/checkout"}><p className="button">Finalizar compra</p></Link>
+                            </div>
+                        </div>
                     </Grid>
                 </Grid>
             </div>

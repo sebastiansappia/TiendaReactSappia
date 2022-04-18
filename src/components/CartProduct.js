@@ -9,7 +9,7 @@ export default function CartProduct(props) {
 
     const [products, setProducts] = useState([])
 
-    const { cartItem, addItem, showId, removeItem, countCart } = useContext(CartContext);
+    const { cartItem, addItem, showId, removeItem, countCart, totalPrice } = useContext(CartContext);
 
     const getProducts = () => {
         return new Promise((resolve, reject) => {
@@ -23,7 +23,7 @@ export default function CartProduct(props) {
             getProducts().then((products) => {
                 setProducts(products)
             }).finally(() => {
-                console.log("Cargaron los items")
+                /*console.log("Cargaron los items")*/
             })
         }, 120);
         return () => clearTimeout(timer);
