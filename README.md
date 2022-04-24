@@ -3,7 +3,7 @@ Comisión 31120
 ### Alumno: Sebastián Sappia Etcheto
 
 
-![Wolf | Tienda de Ropa](https://github.com/sebastiansappia/TiendaReactSappia/blob/main/readme/logo_wolf.png)
+![Wolf | Tienda de Ropa](https://raw.githubusercontent.com/sebastiansappia/TiendaReactSappia/main/public/readme/logo_wolf.png)
 
 Es un desarrollo web de tipo E-commerce utilizando la librería React JS de Javascript.
 
