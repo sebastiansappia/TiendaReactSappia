@@ -35,7 +35,7 @@ Abrir [http://localhost:3000](http://localhost:3000) para ver el proyecto en el 
 ![Checkout](https://raw.githubusercontent.com/sebastiansappia/TiendaReactSappia/main/public/readme/screen_checkout.jpg)
 
 ### Procesamiento final
-![Checkout](https://raw.githubusercontent.com/sebastiansappia/TiendaReactSappia/main/public/readme/screen_final.jpg)
+![Procesamiento final](https://raw.githubusercontent.com/sebastiansappia/TiendaReactSappia/main/public/readme/screen_final.jpg)
 
 ### Contacto
 E-mail: [sebastian.sappia@gmail.com](mailto:sebastian.sappia@gmail.com)
