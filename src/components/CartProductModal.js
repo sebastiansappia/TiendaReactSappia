@@ -9,7 +9,7 @@ export default function CartProductModal(props) {
 
     const [products, setProducts] = useState([])
 
-    const { cartItem, addItem, showId, removeItem, countCart } = useContext(CartContext);
+    const { cartItem, removeItem, countCart } = useContext(CartContext);
     const [loading, setLoading] = useState(true);
 
     const getProducts = () => {
@@ -26,7 +26,6 @@ export default function CartProductModal(props) {
                 setLoading(false);
                 setProducts(products)
             }).finally(() => {
-                /*console.log("Cargaron los items")*/
             })
         }, 200);
         return () => clearTimeout(timer);
@@ -44,8 +43,12 @@ export default function CartProductModal(props) {
                             e.stopPropagation();
                             removeItem(id);
                         }
-                        if (!showId.includes(id)) {
-                            return (<div></div>)
+                        if (countCart === 0) {
+                            return (
+                                <div className="cartItemContainerModal display-table">
+                                    <p>Test</p>
+                                </div>
+                            )
                         } else {
                             return (
                                 <div className="cartItemContainerModal display-table" key={id}>
@@ -55,7 +58,7 @@ export default function CartProductModal(props) {
                                         <p className="price">${price}</p>
                                         <p className="price">Cantidad: {cant}</p>
                                         <p className="price"><b>Total: ${total}</b></p></div>
-                                    <div className="col-4 table-cell black"><DeleteForeverOutlinedIcon onClick={removeToCart} /></div>
+                                    <div className="col-4 table-cell alignCenter black"><DeleteForeverOutlinedIcon onClick={removeToCart} /></div>
                                 </div>
                             )
                         }

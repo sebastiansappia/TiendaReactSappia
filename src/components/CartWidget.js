@@ -9,11 +9,11 @@ import CartContext from '../context/cartContext';
 
 export default function CartWidget(props) {
 
-    const { countCart, cartItem, setShowModal, showModal } = useContext(CartContext);
+    const { cartItem, setShowModal, showModal } = useContext(CartContext);
 
     return (
         <li className="relative cursor-pointer" onClick={() => setShowModal(!showModal)}>
-            <span className="itemsCart">{countCart}</span>
+            <span className="itemsCart">{cartItem.length}</span>
             <ShoppingCartOutlinedIcon />
         </li>
     )

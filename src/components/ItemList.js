@@ -6,13 +6,11 @@ import { useParams, Link } from 'react-router-dom';
 import CircularProgress from '@mui/material/CircularProgress';
 //Firebase
 import db from '../firebase'
-import { collection, getDocs, query, where, orderBy } from 'firebase/firestore'
+import { collection, getDocs, query, orderBy } from 'firebase/firestore'
 
 export default function ItemList(props) {
 
     const { categoryId } = useParams()
-
-    const { mockProductos } = props;
 
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true);
@@ -27,10 +25,6 @@ export default function ItemList(props) {
         }
         )
         return productList;
-        /*
-        return new Promise((resolve, reject) => {
-            return resolve(mockProductos)
-        })*/
     }
 
     const [count, setCount] = useState(0);
@@ -39,7 +33,6 @@ export default function ItemList(props) {
         e.stopPropagation();
         setCount(count + cant);
         setHideId([...hideId, id]);
-        /*console.log('Se agregaron: ' + cant + ' items del articulo ID: ' + id);*/
     };
 
     useEffect(() => {
@@ -50,7 +43,6 @@ export default function ItemList(props) {
                 setLoading(false);
                 categoryId ? filterProductByCategory(products, categoryId) : setProducts(products)
             }).finally(() => {
-                /*console.log("Cargaron los items")*/
             })
         }, 120);
         return () => clearTimeout(timer);

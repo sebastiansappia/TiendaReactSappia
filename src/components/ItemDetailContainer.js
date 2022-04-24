@@ -3,7 +3,6 @@ import ItemDetail from './ItemDetail';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import mockProductos from '../mockproductos/mockProductos';
 import CircularProgress from '@mui/material/CircularProgress';
 //Firebase
 import db from '../firebase'
@@ -24,33 +23,17 @@ export default function ItemDetailContainer(props) {
         if (docSnap.exists()) {
             let product = docSnap.data();
             product.id = docSnap.id;
-            /*console.log(product);*/
             setItem(product);
             setLoading(false);
         } else {
             navigate('/error');
         }
-        /*
-        return new Promise((resolve, reject) => {
-            return resolve(mockProductos)
-        })*/
     }
 
     useEffect(() => {
         getItem()
     }, [id])
 
-    /*
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            getItem().then((item) => {
-                setItem(item)
-            }).finally(() => {
-                console.log("Cargo el item")
-            })
-        }, 120);
-        return () => clearTimeout(timer);
-    }, [])*/
 
     return (
         <Grid container spacing={2}>

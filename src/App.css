@@ -6,6 +6,8 @@ body, html {
   -webkit-font-smoothing: antialiased;
 }
 
+
+
 .App {
   text-align: center;
 }
@@ -67,11 +69,12 @@ header nav ul li {
 header nav ul li .customButton {
   color: white;
   background: none;
+  font-size: 12px !important;
+  margin-top: 3px;
 }
 
 header nav ul li .customButton:hover {
   background: #3e3e3e;
-  border-radius: 35px;
 }
 
 .MuiSvgIcon-root {
@@ -100,7 +103,7 @@ header nav ul li .customButton:hover {
 
 h1.tituloPrincipal {
   font-size: 1.5em;
-  color: #545454;
+  color: #000;
   margin: 2px;
   margin-bottom: 2px;
 }
@@ -112,7 +115,6 @@ h1.tituloPrincipal svg {
 .productData .detalle {
   background: #e9e9e9;
   padding: 8px;
-  /* border: 1px solid #d7d7d7; */
   border-radius: 7px;
   font-size: 11px;
   cursor: pointer;
@@ -163,6 +165,7 @@ h1.tituloPrincipal svg {
   border-radius: 5px;
   background: #f3f3f3;
   overflow: hidden;
+  box-shadow: 1px 5px 5px -3px rgb(0 0 0 / 30%);
 }
 
 .itemCard .productData {
@@ -177,6 +180,10 @@ h1.tituloPrincipal svg {
 
 .itemDetail {
   padding: 2%;
+  margin-top: 0px;
+  background: none;
+  border: none;
+  box-shadow: none;
 }
 
 .itemDetail .imgContainer {
@@ -204,8 +211,6 @@ h1.tituloPrincipal svg {
   vertical-align: top;
   /* here */
 }
-
-.itemDetail .productData .title {}
 
 .itemDetail .itemCounter .counter, .itemDetail .itemCounter .button {
   text-align: center !important;
@@ -259,8 +264,6 @@ h1.tituloPrincipal svg {
   margin: 0;
   padding: 0px;
 }
-
-.itemCounter {}
 
 .itemCounter .button, .itemDetail .button, .button {
   display: block;
@@ -361,7 +364,7 @@ ul.detalleComoComprar {
 }
 
 .cartItemContainer.header {
-  background: #e900b7;
+  background: #959595;
   color: white;
   padding: 20px 0px;
   font-size: 12px;
@@ -401,7 +404,9 @@ ul.detalleComoComprar {
   width: 25%;
 }
 
-.align-left {}
+.align-left {
+  text-align: left;
+}
 
 .black, .black svg {
   color: #000;
@@ -458,24 +463,28 @@ ul.detalleComoComprar {
 
 .checkOutInput {
   display: block;
-  margin: 10px auto;
-  padding: 10px;
+  margin: 10px 0px;
+  padding: 3%;
   font-size: 15px;
-  width: 300px;
-  border-radius: 10px;
+  width: 94%;
+  border-radius: 5px;
   border: 1px solid #b9b9b9;
+}
+
+.checkOutInput:focus-visible {
+  outline: 1px solid rgb(80, 80, 80);
 }
 
 .w-300px {
   width: 300px;
 }
 
-.checkoutContainer{
+.checkoutContainer {
   width: 80%;
   margin: 0 auto;
 }
 
-.checkoutForm{
+.checkoutForm {
   width: 40%;
   display: inline-block;
   vertical-align: top;
@@ -483,6 +492,57 @@ ul.detalleComoComprar {
 
 .fs-08em {
   font-size: 0.8em;
+}
+
+.alignCenter {
+  text-align: center;
+}
+
+.m-0 {
+  margin: 0px;
+}
+
+.mt-10 {
+  margin-top: 20px;
+}
+
+.p-0{
+  padding: 0px !important;
+}
+
+/*FOOTER*/
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0px;
+  padding: 9px;
+  font-size: 10px;
+}
+
+.marginFooter {
+  margin-bottom: 50px;
+}
+
+.whatsapp {
+  position: fixed;
+  right: 30px;
+  bottom: 0px;
+  z-index: 10;
+  width: 70px;
+  height: 70px;
+}
+
+.whatsapp img {
+  cursor: pointer;
+  width: 50px;
 }
 
 

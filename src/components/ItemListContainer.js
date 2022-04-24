@@ -1,9 +1,5 @@
 import Grid from '@mui/material/Grid';
 import ItemList from './ItemList';
-import ItemDetailContainer from './ItemDetailContainer';
-import React, { useState, useEffect } from 'react';
-import mockProductos from '../mockproductos/mockProductos';
-
 
 export default function ItemListContainer(props) {
 
@@ -13,10 +9,10 @@ export default function ItemListContainer(props) {
         <div>
             <Grid container spacing={2}>
                 <Grid item xs={12}>
-                    <h1 className="tituloPrincipal">{title}</h1>
+                    <h1 className="tituloPrincipal">&iexcl;Mir&aacute; nuestros productos destacados!</h1>
                 </Grid>
             </Grid>
-            <ItemList mockProductos={mockProductos} />
+            <ItemList/>
         </div>
     )
 }

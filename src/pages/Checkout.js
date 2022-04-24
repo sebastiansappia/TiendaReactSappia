@@ -1,9 +1,6 @@
-import Grid from '@mui/material/Grid';
 import { Button } from '@mui/material';
-import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import React, { useState, useEffect, useContext } from 'react';
 import CartContext from '../context/cartContext';
-import CartProduct from '../components/CartProduct';
 import { Link } from "react-router-dom"
 import db from '../firebase'
 import { addDoc, collection } from 'firebase/firestore';
@@ -11,7 +8,8 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 const Checkout = () => {
 
-    const { cartItem, addItem, showId, removeItem, countCart, setShowModal, totalPrice, addCartItem } = useContext(CartContext);
+    const { cartItem, showId, setShowModal, totalPrice } = useContext(CartContext);
+
     const [loading, setLoading] = useState(false);
     const [products, setProducts] = useState([])
 
@@ -52,12 +50,11 @@ const Checkout = () => {
             setLoading(true);
             setProducts([])
             getProducts().then((products) => {
-                setLoading(false);
                 setProducts(products)
             }).finally(() => {
-                /*console.log("Cargaron los items")*/
+                setLoading(false);
             })
-        }, 200);
+        }, 0);
         return () => clearTimeout(timer);
     }, [cartItem])
 
@@ -100,17 +97,18 @@ const Checkout = () => {
                 loading ? <div className="circularProgress"><CircularProgress color="inherit" /></div> :
                     successOrder ? (
                         <div>
-                            <h3>Orden generada correctamente</h3>
-                            <p>Su numero de orden es: {successOrder}</p>
+                            <h3 className="w-25 align-left marginAuto mt-10">Tu orden de compra fue generada correctamente, nos pondremos en contacto con vos a la brevedad para coordinar el envio y las formas de pago</h3>
+                            <p className="w-25  align-left marginAuto mt-10">Su numero de orden es: {successOrder}</p>
                             <Link to={"/"}><p className="button w-25 d-inline-block">Seguir comprando</p></Link>
                         </div >
                     ) : (
                         <>
                             <div className="checkoutContainer">
                                 <div className="checkoutForm">
-                                    <h5>Complet&aacute; tus datos para confirmar la compra</h5>
-                                    <form onSubmit={handleSubmit}>
-                                        <input className="checkOutInput" type="text" name='name' placeholder='Nombre'
+                                    <h4 className="align-left">Complet&aacute; el formulario para confirmar la compra</h4>
+                                    <form onSubmit={handleSubmit} autocomplete="off">
+                                        <h6 className="align-left m-0">Datos personales</h6>
+                                        <input className="checkOutInput" type="text" name='name' placeholder='Nombre y apellido'
                                             onChange={handleChange}
                                             value={formData.name}
                                         />
@@ -118,15 +116,16 @@ const Checkout = () => {
                                             onChange={handleChange}
                                             value={formData.phone}
                                         />
-                                        <input className="checkOutInput" type="mail" name='email' placeholder='e-mail'
+                                        <input className="checkOutInput" type="mail" name='email' placeholder='E-mail'
                                             onChange={handleChange}
                                             value={formData.email}
                                         />
-                                        <Button type="submit"><p className="button d-inline-block w-300px">Enviar</p></Button>
+                                        <Button type="submit" className="w-100 p-0"><p className="button d-inline-block w-100">Enviar</p></Button>
                                         <Link to={"/cart"}><p className="fs-08em">Volver atras</p></Link>
                                     </form>
                                 </div>
                                 <div className="checkoutForm">
+                                    <h5>Tu carrito</h5>
                                     {products.map((product) => {
                                         const { id, img, alt, title, price, cant } = product;
                                         const total = price * cant;

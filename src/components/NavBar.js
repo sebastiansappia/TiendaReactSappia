@@ -12,7 +12,7 @@ function NavBar(props) {
         <header>
             <nav>
                 <div className="brandNav">
-                    <Link to={"/"}><img src="/img/logo_seaquest.png" alt=""/></Link>
+                    <Link to={"/"}><img src="/img/logo_wolf.png" alt=""/></Link>
                 </div>
                 <div className='menu'>
                     <ul>

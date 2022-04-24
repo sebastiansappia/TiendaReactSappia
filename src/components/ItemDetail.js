@@ -1,7 +1,7 @@
 import ItemCount from './ItemCount';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCreditCard } from '@fortawesome/free-solid-svg-icons'
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom"
 
 export default function ItemDetail({ data }, key) {
@@ -13,7 +13,6 @@ export default function ItemDetail({ data }, key) {
         e.stopPropagation();
         setCount(count + cant);
         setHideId([...hideId, id]);
-        //console.log('Se agregaron: ' + cant + ' items del articulo ID: ' + id);
     };
 
     return (
@@ -26,6 +25,7 @@ export default function ItemDetail({ data }, key) {
                 <p className="talles">Talles disponibles: {talles}</p>
                 <ItemCount id={id} stock={stock} initial={initial} action={onAdd} hideId={hideId} product={data}/>
                 <p className="stockDisponible">Stock disponible: {stock}</p>
+                <Link to={"/"}><p className="fs-08em grey">&#8592; VOLVER AL SHOP</p></Link>
             </div>
         </div>
     )

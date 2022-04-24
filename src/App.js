@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 //Components
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
+import Whatsapp from './components/Whatsapp';
 //Pages
 import HomePage from './pages/HomePage'
 import Item from './pages/Item'
@@ -17,7 +19,7 @@ import { CartProvider } from './context/cartContext';
 
 function App() {
     useEffect(() => {
-        document.title = "Seaquest | Tienda de ropa | React JS";
+        document.title = "Wolf | Tienda de ropa | React JS";
     }, []);
 
 
@@ -36,6 +38,9 @@ function App() {
                         <Route path="/checkout" element={<Checkout />} />
                         <Route path="*" element={<NotFoundPage />} />
                     </Routes>
+                    <div className="marginFooter"></div>
+                    <Whatsapp/>
+                    <Footer />
                 </BrowserRouter>
             </CartProvider>
         </div>
