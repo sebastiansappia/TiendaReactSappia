@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { Link } from "react-router-dom"
-import CartContext from '../context/cartContext';
+import React, { useContext } from 'react';
+import { Link } from "react-router-dom";
 import DeleteForeverOutlinedIcon from '@material-ui/icons/DeleteForeverOutlined';
+import CartContext from '../context/cartContext';
+
 
 export default function ItemCount(props) {
 

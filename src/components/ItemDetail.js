@@ -1,8 +1,8 @@
-import ItemCount from './ItemCount';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCreditCard } from '@fortawesome/free-solid-svg-icons'
-import React, { useState } from 'react';
 import { Link } from "react-router-dom"
+import ItemCount from './ItemCount';
 
 export default function ItemDetail({ data }, key) {
     const { id, img, alt, title, description, price, stock, talles, initial } = data;

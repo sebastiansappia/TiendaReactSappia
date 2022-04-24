@@ -3,7 +3,7 @@ import ItemList from './ItemList';
 
 export default function ItemListContainer(props) {
 
-    const { title } = props;
+    //const { title } = props;
 
     return (
         <div>

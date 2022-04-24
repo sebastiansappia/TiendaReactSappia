@@ -1,9 +1,10 @@
-import Grid from '@mui/material/Grid';
-import ItemDetail from './ItemDetail';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import Grid from '@mui/material/Grid';
 import CircularProgress from '@mui/material/CircularProgress';
+import ItemDetail from './ItemDetail';
+
 //Firebase
 import db from '../firebase'
 import { doc, getDoc } from 'firebase/firestore'
